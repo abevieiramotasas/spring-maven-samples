@@ -4,12 +4,56 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="propertyInjection" class="com.abe.PropertyInjection">
-		<property name="name" value="Pela Propriedade" />
+	<!-- Atualizado -->
+	<bean id="exemploProperty" class="com.abe.Exemplo">
+		<property name="nome" value="nome setado por property" />
+	</bean>
+
+	<bean id="exemploConstructor" class="com.abe.Exemplo">
+		<constructor-arg value="20" />
+	</bean>
+
+	<bean id="exemploInnerBean" class="com.abe.Exemplo">
+		<property name="exemplo">
+			<bean class="com.abe.ExemploProperty">
+				<property name="nome" value="nome do inner bean" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="exemploList" class="com.abe.Exemplo">
+		<property name="lista">
+			<list>
+				<ref bean="list_0" />
+				<ref bean="list_1" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="exemploMap" class="com.abe.Exemplo">
+		<property name="map">
+			<map>
+				<entry key="chave1" value="valor1" />
+				<entry key="chave2" value="valor2" />
+			</map>
+		</property>
 	</bean>
 	
-	<bean id="constructorInjection" class="com.abe.ConstructorInjection">
-		<constructor-arg value="Pelo Construtor" />
+	<bean id="exemploAutowiringByName" class="com.abe.Exemplo" autowire="byName">
+	</bean>
+
+	<!-- Beans definidos para serem utilizados na lista(observar uso de ref) -->
+
+	<bean id="list_0" class="com.abe.ExemploProperty">
+		<property name="nome" value="nome do inner bean 0" />
+	</bean>
+	<bean id="list_1" class="com.abe.ExemploProperty">
+		<property name="nome" value="nome do inner bean 1" />
+	</bean>
+	
+	<!-- Bean definido para ser utilizado com autowiring -->
+	<bean id="exemplo" class="com.abe.ExemploProperty">
+		<property name="nome" value="nome do bean injetado por autowiringbyname" />
 	</bean>
 
 </beans>
