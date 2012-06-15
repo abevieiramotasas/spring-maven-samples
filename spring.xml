@@ -49,6 +49,11 @@
 				<ref bean="list_1" />
 			</list>
 		</property>
+		<property name="map">
+			<map merge="true">
+				<entry key="chave3" value="valor3" />
+			</map>
+		</property>
 	</bean>
 
 	<!-- Beans definidos para serem utilizados na lista(observar uso de ref) -->
