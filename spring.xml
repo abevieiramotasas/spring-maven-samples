@@ -41,6 +41,15 @@
 	
 	<bean id="exemploAutowiringByName" class="com.abe.Exemplo" autowire="byName">
 	</bean>
+	
+	<bean id="exemploInheritance" class="com.abe.Exemplo" parent="exemploMap">
+		<property name="lista">
+			<list>
+				<ref bean="list_0" />
+				<ref bean="list_1" />
+			</list>
+		</property>
+	</bean>
 
 	<!-- Beans definidos para serem utilizados na lista(observar uso de ref) -->
 

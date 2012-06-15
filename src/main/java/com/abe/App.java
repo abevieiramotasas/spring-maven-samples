@@ -13,12 +13,14 @@ public class App {
 		Exemplo listBean = (Exemplo) context.getBean("exemploList");
 		Exemplo mapBean = (Exemplo) context.getBean("exemploMap");
 		Exemplo autowireBean = (Exemplo) context.getBean("exemploAutowiringByName");
+		Exemplo inheritanceBean = (Exemplo) context.getBean("exemploInheritance");
 		System.out.println(porProperty);
 		System.out.println(porConstructor);
 		System.out.println(innerBean);
 		System.out.println(listBean);
 		System.out.println(mapBean);
 		System.out.println(autowireBean);
+		System.out.println(inheritanceBean);
 		
 	}
 }
