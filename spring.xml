@@ -72,5 +72,10 @@
 	
 	<bean id="beanComInitializerDestroyerPorXML" class="com.abe.Exemplo" init-method="init" destroy-method="destroyP">
 	</bean>
+	
+	<!-- com bean post processor sem factory -->
+	<!-- <bean class="com.abe.DisplayNameBeanPostProcessor" /> -->
+	
+	<bean class="com.abe.BeanFactoryPostProcessorPP" />
 
 </beans>
