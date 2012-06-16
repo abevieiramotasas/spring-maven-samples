@@ -69,5 +69,8 @@
 	<bean id="exemplo" class="com.abe.ExemploProperty">
 		<property name="nome" value="nome do bean injetado por autowiringbyname" />
 	</bean>
+	
+	<bean id="beanComInitializerDestroyerPorXML" class="com.abe.Exemplo" init-method="init" destroy-method="destroyP">
+	</bean>
 
 </beans>

@@ -1,11 +1,12 @@
 package com.abe;
 
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 public class App {
 	public static void main(String[] args) {
-		ApplicationContext context = new FileSystemXmlApplicationContext(
+		AbstractApplicationContext context = new FileSystemXmlApplicationContext(
 				"spring.xml");
+		context.registerShutdownHook();
 
 		Exemplo porProperty = (Exemplo) context.getBean("exemploProperty");
 		Exemplo porConstructor = (Exemplo) context.getBean("exemploConstructor");
@@ -14,6 +15,7 @@ public class App {
 		Exemplo mapBean = (Exemplo) context.getBean("exemploMap");
 		Exemplo autowireBean = (Exemplo) context.getBean("exemploAutowiringByName");
 		Exemplo inheritanceBean = (Exemplo) context.getBean("exemploInheritance");
+		Exemplo initDestroyBean = (Exemplo) context.getBean("beanComInitializerDestroyerPorXML");
 		System.out.println(porProperty);
 		System.out.println(porConstructor);
 		System.out.println(innerBean);
@@ -21,6 +23,7 @@ public class App {
 		System.out.println(mapBean);
 		System.out.println(autowireBean);
 		System.out.println(inheritanceBean);
+		System.out.println(initDestroyBean);
 		
 	}
 }

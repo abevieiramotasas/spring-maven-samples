@@ -3,7 +3,10 @@ package com.abe;
 import java.util.List;
 import java.util.Map;
 
-public class Exemplo {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Exemplo implements InitializingBean, DisposableBean {
 	
 	// tipos simples
 	/**
@@ -87,6 +90,27 @@ public class Exemplo {
 	public String toString() {
 		return "Exemplo [nome=" + nome + ", idade=" + idade + ", exemplo="
 				+ exemplo + ", lista=" + lista + ", map=" + map + "]";
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("Bean inicializado");
+		
+	}
+
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("Bean destruido");
+		
+	}
+	
+	public void init() {
+		System.out.println("Inicializado com método setado no .xml");
+	}
+	
+	public void destroyP() {
+		System.out.println("Destruido com método setado no .xml");
+		
 	}
 
 }
