@@ -77,5 +77,11 @@
 	<!-- <bean class="com.abe.DisplayNameBeanPostProcessor" /> -->
 	
 	<bean class="com.abe.BeanFactoryPostProcessorPP" />
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
+		<property name="location" value="prop.properties" />
+	</bean>	
+	<bean id="exemploPropertyFile" class="com.abe.Exemplo" >
+		<property name="nome" value="${nome}" />
+	</bean>
 
 </beans>

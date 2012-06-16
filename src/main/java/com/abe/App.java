@@ -16,6 +16,7 @@ public class App {
 		Exemplo autowireBean = (Exemplo) context.getBean("exemploAutowiringByName");
 		Exemplo inheritanceBean = (Exemplo) context.getBean("exemploInheritance");
 		Exemplo initDestroyBean = (Exemplo) context.getBean("beanComInitializerDestroyerPorXML");
+		Exemplo comPropertyFile = (Exemplo) context.getBean("exemploPropertyFile");
 		System.out.println(porProperty);
 		System.out.println(porConstructor);
 		System.out.println(innerBean);
@@ -24,6 +25,7 @@ public class App {
 		System.out.println(autowireBean);
 		System.out.println(inheritanceBean);
 		System.out.println(initDestroyBean);
+		System.out.println(comPropertyFile);
 		
 	}
 }
