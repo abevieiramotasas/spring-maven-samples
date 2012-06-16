@@ -9,7 +9,7 @@ public class BeanFactoryPostProcessorPP implements BeanFactoryPostProcessor {
 	@Override
 	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory)
 			throws BeansException {
-		System.out.println("Meu Bean Factory foi chamado");
+		System.out.println("Meu Bean PostProcessor Factory foi chamado");
 	}
 
 }
